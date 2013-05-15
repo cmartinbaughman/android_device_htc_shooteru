@@ -136,6 +136,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
+## CMB Stuff and Seeder etc
+PRODUCT_COPY_FILES += \
+    device/htc/shooteru/prebuilt/bin/seeder:system/bin/seeder \
+    device/htc/shooteru/prebuilt/etc/init.d/98seeding:system/etc/init.d/98seeding \
+    device/htc/shooteru/prebuilt/xbin/rngd:system/xbin/rngd \
+    device/htc/shooteru/prebuilt/xbin/entro:system/xbin/entro
+
 ## We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 

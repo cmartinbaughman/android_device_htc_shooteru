@@ -40,7 +40,12 @@ BOARD_USE_NEW_LIBRIL_HTC := true
 TARGET_HARDWARE_3D := true
 
 # Kernel Details
+TARGET_KERNEL_SOURCE := kernel/htc/shooteru
 TARGET_KERNEL_CONFIG := shooter_u_defconfig
+BUILD_KERNEL := true
+
+# Custom Kernel Toolchain
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := cmb-linaro-4.7.3
 
 # Camera
 TARGET_DISABLE_ARM_PIE := true
