@@ -48,8 +48,6 @@ BUILD_KERNEL := true
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := cmb-linaro-4.7.3
 
 # Camera
-TARGET_DISABLE_ARM_PIE := true
-BOARD_CAMERA_USE_MM_HEAP := true
 BOARD_HTC_3D_SUPPORT := true
 
 # Bluetooth/Wifi
@@ -59,7 +57,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/shooteru/bluetooth
 # Custom LUN File Path
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=shooteru no_console_suspend=1 minkhz=384000 maxkhz=1512000 maxscroff=486000 3dgpu=320000000 2dgpu=266667000 s2w=2 s2w_start=HOME s2w_end=SEARCH
+BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=shooteru no_console_suspend=1 minkhz=384000 maxkhz=1512000 maxscroff=486000 s2w=0
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGE_SIZE := 2048 
 
@@ -86,8 +84,6 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_FLASH_BLOCK_SIZE := 262144
 
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-TARGET_RECOVERY_UI_LIB := librecovery_ui_shooteru
-TARGET_RECOVERY_INITRC := device/htc/shooteru/recovery/init.rc
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
