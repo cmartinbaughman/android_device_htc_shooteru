@@ -128,6 +128,24 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
+## CMB Stuff and Seeder etc
+PRODUCT_COPY_FILES += \
+    device/htc/shooteru/prebuilt/bin/seeder:system/bin/seeder \
+    device/htc/shooteru/prebuilt/etc/init.d/98seeding:system/etc/init.d/98seeding \
+    device/htc/shooteru/prebuilt/xbin/rngd:system/xbin/rngd \
+    device/htc/shooteru/prebuilt/xbin/entro:system/xbin/entro \
+    device/htc/shooteru/prebuilt/app/SwiqiSettingsService.apk:system/app/SwiqiSettingsService.apk \
+    device/htc/shooteru/prebuilt/etc/be_movie:system/etc/be_movie \
+    device/htc/shooteru/prebuilt/etc/be_movie_setting:system/etc/be_movie_setting \
+    device/htc/shooteru/prebuilt/etc/be2_album:system/etc/be2_album \
+    device/htc/shooteru/prebuilt/etc/permissions/com.sonyericsson.uxp.xml:system/etc/permissions/com.sonyericsson.uxp.xml \
+    device/htc/shooteru/prebuilt/etc/permissions/com.sonyericsson.uxpres.xml:system/etc/permissions/com.sonyericsson.uxpres.xml \
+    device/htc/shooteru/prebuilt/framework/com.sonyericsson.uxpres.jar:system/framework/com.sonyericsson.uxpres.jar \
+    device/htc/shooteru/prebuilt/framework/com.sonyericsson.uxp.jar:system/framework/com.sonyericsson.uxp.jar \
+    device/htc/shooteru/prebuilt/lib/libswiqisettinghelper.so:system/lib/libswiqisettinghelper.so \
+    device/htc/shooteru/prebuilt/lib/libmbe_paramselector.so:system/lib/libmbe_paramselector.so \
+    device/htc/shooteru/prebuilt/lib/libmbe.so:system/lib/libmbe.so \
+
 ## We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -140,6 +158,8 @@ PRODUCT_PROPERTY_OVERRIDES += ro.vold.umsdirtyratio=20
 ## misc
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enable_bypass=1 \
+    ro.service.swiqi2.supported=true \
+    persist.service.swiqi2.enable=1 \
     dalvik.vm.lockprof.threshold=500 \
     ro.com.google.locationfeatures=1 \
     dalvik.vm.dexopt-flags=m=y
